@@ -7,6 +7,14 @@
   "prConcurrentLimit": 5,
   "prHourlyLimit": 2,
   "vulnerabilityAlerts": { "enabled": true },
+  "packageRules": [
+    {
+      "description": "Internal base images on the private registry are bumped by hand",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["registry.sea.ai:8443/**"],
+      "enabled": false
+    }
+  ],
   "onboarding": false,
   "requireConfig": "optional"
 }
