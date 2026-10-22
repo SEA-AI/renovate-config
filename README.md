@@ -35,5 +35,8 @@ PR, validated by CI.
 
 1. Add it to the Renovate app's access list (skip if that's set to "All repositories").
 2. `gh repo edit SEA-AI/<repo> --enable-auto-merge`
-3. Done — it inherits this config. Don't add a `renovate.json` unless the repo needs
-   different behaviour. Check the first run at developer.mend.io/github/SEA-AI.
+3. Done — it inherits this config. Onboarding is off (`onboarding: false`,
+   `requireConfig: optional`), so there is no "Configure Renovate" PR to merge and no
+   `renovate.json` needed; a closed onboarding PR from earlier doesn't block it either.
+   Only add a `renovate.json` if the repo needs different behaviour. Check the first
+   run at developer.mend.io/github/SEA-AI.
