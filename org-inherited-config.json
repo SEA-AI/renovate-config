@@ -6,5 +6,7 @@
   "platformAutomerge": true,
   "prConcurrentLimit": 5,
   "prHourlyLimit": 2,
-  "vulnerabilityAlerts": { "enabled": true }
+  "vulnerabilityAlerts": { "enabled": true },
+  "onboarding": false,
+  "requireConfig": "optional"
 }
