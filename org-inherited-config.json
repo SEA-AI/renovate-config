@@ -13,6 +13,27 @@
       "matchDatasources": ["docker"],
       "matchPackageNames": ["registry.sea.ai:8443/**"],
       "enabled": false
+    },
+    {
+      "description": "Runtime version bumps (Python, Node, base images) are a decision, not an update",
+      "matchDepNames": ["python", "node"],
+      "enabled": false
+    },
+    {
+      "description": "Same for Docker base image major and minor tags; patch and digest updates still come through",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
+    },
+    {
+      "description": "Majors get a PR but a person merges them",
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "description": "GPU stack is tied to the JetPack/CUDA version on the devices, a person merges any bump",
+      "matchPackageNames": ["/^torch/", "/tensorrt/", "/^nvidia-/", "/cuda/"],
+      "automerge": false
     }
   ],
   "onboarding": false,
