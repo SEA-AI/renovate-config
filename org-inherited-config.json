@@ -29,6 +29,11 @@
       "description": "Majors get a PR but a person merges them",
       "matchUpdateTypes": ["major"],
       "automerge": false
+    },
+    {
+      "description": "GPU stack is tied to the JetPack/CUDA version on the devices, a person merges any bump",
+      "matchPackageNames": ["/^torch/", "/tensorrt/", "/^nvidia-/", "/cuda/"],
+      "automerge": false
     }
   ],
   "onboarding": false,
