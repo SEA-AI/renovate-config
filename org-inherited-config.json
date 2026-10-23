@@ -13,6 +13,11 @@
       "matchDatasources": ["docker"],
       "matchPackageNames": ["registry.sea.ai:8443/**"],
       "enabled": false
+    },
+    {
+      "description": "Python version bumps change the runtime, a person decides those",
+      "matchDepNames": ["python"],
+      "enabled": false
     }
   ],
   "onboarding": false,
