@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
   "pre-commit": { "enabled": true },
+  "labels": ["renovate", "automerge"],
   "automerge": true,
   "platformAutomerge": true,
   "prConcurrentLimit": 5,
@@ -28,12 +29,20 @@
     {
       "description": "Majors get a PR but a person merges them",
       "matchUpdateTypes": ["major"],
-      "automerge": false
+      "automerge": false,
+      "labels": ["renovate", "needs-review"]
     },
     {
       "description": "GPU stack is tied to the JetPack/CUDA version on the devices, a person merges any bump",
       "matchPackageNames": ["/^torch/", "/tensorrt/", "/^nvidia-/", "/cuda/"],
-      "automerge": false
+      "automerge": false,
+      "labels": ["renovate", "needs-review"]
+    },
+    {
+      "description": "Repos without CI gating the default branch: every PR needs a person",
+      "matchRepositories": ["SEA-AI/Dev-Commons", "SEA-AI/yolov5"],
+      "automerge": false,
+      "labels": ["renovate", "needs-review"]
     }
   ],
   "onboarding": false,
